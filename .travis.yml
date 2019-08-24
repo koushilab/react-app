@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t koushilab/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run koushilab/docker-react npm run test -- --coverage
+
+
+
+  
